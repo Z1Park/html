@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <title>WEB-html</title>
+    <meta charset='UTF-8'>
+</head>
+
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <ol>
+        <li><a href='1.html.html'>HTML</a></li>
+        <li><a href='2.css.html'>CSS</a></li>
+        <li><a href='3.javascript.html'>JavaScript</a></li>
+    </ol>
+    <strong>코딩으로</strong> <u>웹 페이지 만들기</u>
+
+    <h2>HTML 공부하기</h2>
+    <p>
+        title tag로 웹페이지 명을 바꿀 수 있다.<br>
+        코드 저장 : UTF-8로 저장 => meta 태그로 열때도 UTF-8로 열어야한다.<br>
+        본문은 body tag로 감싸줘야 함(약속)<br>
+        본문의 제목(title tag), 저장방식(meta charset)은 head tag로 묶기로 약속<br>
+        문서 전체는 html 태그로 묶고, doctype으로 이 문서가 html 문서임을 알려주기로 약속
+    </p>
+
+    <p>
+        anchor 태그(a) : 정보의 바다에서 닻이 되어준다는 의미<br>
+        anchor 태그가 없다면 검색엔진 사용 불가!<br>
+        링크 걸 때 사용(하이퍼 링크 참조 속성 : href / 새창에서 열기 속성 : target="_blank")<br>
+        <a href='https://ko.wikipedia.org/wiki/HTML' target='_blank'>HTMl 위키 백과사전</a>
+    </p>
+
+    <p>
+        줄바꾸기는 br tag<br>
+        br tag는 시각적 의미만 갖기 때문에 닫힘 태그가 필요없다
+    </p>
+
+    <p style='margin-top:40px'>
+        단락별로 나누기는 p tag<br>
+        p tag는 여백이 정해져있다 : css로 보정가능(style='margin-top:40px')
+    </p>
+
+    <p>
+        목차, 목록 태그는 li<br>
+        목차가 여러 개면 ul 태그로 구분(Unordered List)<br>
+        목차 앞에 숫자 붙이고 싶으면 ol 태그(Ordered List)
+    </p>
+
+    <p>
+        이미지 태그는 img<br>
+        태그만으로는 부족할 때 속성을 사용<br>
+        <img src='tmp_img.jpg' width="100%">
+    </p>
+</body>
+</html>
