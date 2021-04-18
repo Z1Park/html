@@ -3,18 +3,117 @@
 <head>
     <title>WEB-css</title>
     <meta charset='UTF-8'>
+    <link rel='stylesheet' href='style.css'>
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
-    <ol>
-        <li><a href='1.html.html'>HTML</a></li>
-        <li><a href='2.css.html'>CSS</a></li>
-        <li><a href='3.javascript.html'>JavaScript</a></li>
-    </ol>
-    <strong>코딩으로</strong> <u>웹 페이지 만들기</u>
 
-    <h2>CSS 공부하기</h2>
+    <div id='grid'>
+        <ol id='navigation'>
+            <li><a href='1.html.html' class='saw'>HTML</a></li>
+            <li><a href='2.css.html' class='saw' id='active'>CSS</a></li>
+            <li><a href='3.javascript.html'>JavaScript</a></li>
+        </ol>
+
+        <div id='article'>
+            <h2>CSS 공부하기</h2>
+            <p>
+                html에 내가 css를 쓸거야 선언하기 : style 태그<br>
+                style 안쓰고 속성으로 css 사용하기 : style 속성<br>
+                style 태그 : 어디에 지정할지? => 선택자(selector) // a
+                style 태그 : 무슨 효과를 설정? => 선언(declaration) // color:red;(property:value)
+            </p>
+
+            <p>
+                태그에 class로 그룹핑(html 기능), 띄어쓰기로 여러 class 부여 가능<br>
+                클래스에 대해 스타일 지정 시 앞에 점(.) 붙여야함<br>
+                태그에 id로 속성 추가(html에서 단 한번만 사용해야함) / 스타일 지정시 샾(#) 붙여야함<br>
+                스타일 지정 선택자 우선 순위 :  id(#) > class(.) > tag (동일 우선 순위 시 마지막에 등장하는거)<br>
+                그 외 자세한 사항은 css selector 검색
+            </p>
+
+            <p>
+                박스모델 : 테두리 그리기 border로 태그가 차지하는 영역 확인<br>
+                h1 tag = 한 줄 전체를 사용(block level element)  / a tag = 해당 부분만 사용(inline element)<br>
+                css에 display 속성을 추가해 바꿀수 있다.<br>
+                f12에 style 탭에서 어떤 css style에 영향을 받는지 확인할 수 있다.<br>
+                css 주석은 /* */ <br>
+                선택자 입력시 콤마(,)로 여러 선택자에 동일 옵션 적용 가능<br>
+                <!--
+                예시
+                    h1 {
+                        /*
+                        border-width: 3px;
+                        border-color: blueviolet;
+                        border-style: dashed;
+                        */
+                        border:5px solid blueviolet;
+                        /* 중복 코드를 줄이기위해 이런식으로 쓸 수 도있다 */
+                        padding:20px;
+                        margin:15px;    /* 박스 모델 간 여백 */
+                        display:block;  /* 기본적으로 생략되어있음 */
+                        width:100px     /* block level element 속성 변경 가능 */
+                    }
+                -->
+                div 태그 : 디자인을 위한 block element / span 태그 : 디자인을 위한 inline element<br>
+                caniuse.com : 브라우저별로 해당 기능 사용 가능한지 / 얼마나 많은 사람이 쓰는지 통계를 볼 수 있는 유용한 사이트
+            </p>
+
+            <p>
+                그리드 : 레이아웃 설정하기<br>
+                여러 개의 태그를 그리드로 사용(격자판 배열은 내맘대로)
+                <!--
+                예시
+                    <style>
+                        #grid {
+                            border:5px solid yellow;
+                            display:gird;
+                            grid-template-columns: 150px 1fr; /* 1째 열은 150px 고정, 나머지 열 전체 사용 */
+                            /* grid-template-columns: 2px 1fr;  /* 화면 전체를 2:1로 나눔 */ */
+                        }
+                        div {
+                            border:5px solid gray;
+                        }
+                    </sytle>
+
+                    <body>
+                        <div id='gird'>
+                            <div>NAVIGATION</div>
+                            <div>ARTICLE</div>
+                        </div>
+                    </body>
+                -->
+            </p>
+
+            <p>
+                미디어 쿼리 사용하기 : <strong>반응형 디자인</strong><br>
+                화면 좌우 창이 줄면 세로로 보여주기
+                <!--
+                예시
+                    <style>
+                        div {
+                            border:10px solid green;
+                            font-size:60px;
+                        }
+                        /* screen width가 800px보다 크면 */
+                        @media(min-width:800px)
+                            div{
+                                display:none;
+                            }
+                    </style>
+                -->
+            </p>
+
+            <p>
+                위에서 만든 css 레이아웃을 모든 페이지에 적용<br>
+                만약 페이지가 100개라면?? => css 파일로 따로 뽑아서 사용!!(link)<br>
+                중복 코드 최소화 가능 & 일괄적으로 디자인 변경 가능<br>
+                html 파일 열때마다 css 파일 다운로드? 네트워크적 측면에서는 더 안좋음<br>
+                => 해결 방법 : 캐싱(미리 저장해두고 호출 시에 가져다쓰기)
+            </p>
+        </div>
+    </div>
     
 </body>
 </html>
