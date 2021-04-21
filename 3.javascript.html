@@ -4,10 +4,53 @@
     <title>WEB-javascript</title>
     <meta charset='UTF-8'>
     <link rel='stylesheet' href='style.css'>
+    <script>
+        function day_night_toggle(self){
+            var target = document.querySelector('body').style
+            var link_list = document.querySelectorAll('a')
+
+            if (self.value == 'night')
+            {
+                target.backgroundColor = 'black'
+                target.color = 'white'
+                self.value = 'day'
+
+                for (var i=0; i<link_list.length; i++)
+                {
+                    link_list[i].style.color = 'powderblue'
+                }
+            }
+            else
+            {
+                target.backgroundColor = 'white'
+                target.color = 'black'
+                self.value = 'night'
+
+                for (var i=0; i<link_list.length; i++)
+                {
+                    link_list[i].style.color = 'black'
+                }
+            }
+        }
+    </script>
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
+    <!--
+    <input type="button" value='night' onclick="
+        document.querySelector('body').style.backgroundColor = 'black'
+        document.querySelector('body').style.color = 'white'
+    ">
+    <input type="button" value='day' onclick="
+        document.querySelector('body').style.backgroundColor = 'white'
+        document.querySelector('body').style.color = 'black'
+    ">
+    -->
+    <input id='toggle_btn' type='button' value="night" onclick="
+        day_night_toggle(this)
+    ">
+
     <div id='grid'>
         <ol id='navigation'>
             <li><a href='1.html.html'>HTML</a></li>
@@ -38,6 +81,29 @@
                 "문자열".property 로 여러 property 동작 가능(length, toUpperCase, indexof, trim 등)<br>
                 문자열 + 문자열 로 concatnate 가능<br>
                 console 내에서 변수 선언 가능(var)<br>
+            </p>
+
+            <p>
+                js에서 tag 고르기 : 검색 - javascript select tag by css selector<br>
+                selector 선택 후 뭘 바꿀건지 선택 : 검색 - javascript element style<br>
+            </p>
+
+            <p>
+                조건문 사용하기 : night-day 를 토글기능으로?<br>
+                버튼에 id 추가, 버튼 value 값 얻는 법 검색 : javascript element get value<br>
+                중복 코드 제거(리팩토링) : 같은 버튼을 다른 위치에 추가하기<br>
+                코드 복사 => 새로운 id로 변경 필요 // id 대신 this 사용하기<br>
+                document.querySelecotr('body').style 부분 중복 => 변수로 처리하면 코드가 간단<br>
+            </p>
+
+            <p>
+                반복문 사용하기 : 야간모드 시 링크 안보임 => 모든 link 에 대해 모드 변경 시 색깔 설정하기<br>
+                console 창에서 리스트 값 출력하기 : console.log(alist[i])<br>
+            </p>
+
+            <p>
+                함수 사용하기 : head 에 script 추가 후 함수 선언하기(function)<br>
+                객체 사용하기 : 
             </p>
 
         </div>
