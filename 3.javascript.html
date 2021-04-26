@@ -4,35 +4,8 @@
     <title>WEB-javascript</title>
     <meta charset='UTF-8'>
     <link rel='stylesheet' href='style.css'>
-    <script>
-        function day_night_toggle(self){
-            var target = document.querySelector('body').style
-            var link_list = document.querySelectorAll('a')
-
-            if (self.value == 'night')
-            {
-                target.backgroundColor = 'black'
-                target.color = 'white'
-                self.value = 'day'
-
-                for (var i=0; i<link_list.length; i++)
-                {
-                    link_list[i].style.color = 'powderblue'
-                }
-            }
-            else
-            {
-                target.backgroundColor = 'white'
-                target.color = 'black'
-                self.value = 'night'
-
-                for (var i=0; i<link_list.length; i++)
-                {
-                    link_list[i].style.color = 'black'
-                }
-            }
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="color.js"></script>
 </head>
 
 <body>
@@ -103,7 +76,49 @@
 
             <p>
                 함수 사용하기 : head 에 script 추가 후 함수 선언하기(function)<br>
-                객체 사용하기 : 
+                객체 사용하기 : 중괄호({})로 선언<br>
+                <!--
+                    예시
+                    var coworkers = {
+                        "programmer" : "egoing",
+                        "designer" : "leezche"
+                    }
+                    document.write("programmer : "+coworkers.programmer+"<br>");
+                    document.write("designer : "+coworkers.designer+"<br>");
+                    coworkers.bookkeeper = "duru";
+                    coworkers["data scientist"] = "taeho";
+                -->
+                객체 순회 접근 : javascript object iterate 검색<br>
+                <!--
+                    예시
+                    for(var key in coworkers) {
+                        document.write(key+":"+coworkers[key]+<br>);
+                    }
+                -->
+                매서드 만들기 : 객체.함수 = function()<br>
+                객체 내의 변수 : 프로퍼티<br>
+                <!--
+                    예시
+                    coworkers.showAll = function(){
+                        for(var key in this) {
+                            document.write(key+":"+this[key]+<br>);
+                        }
+                    }
+                -->
+            </p>
+
+            <p>
+                여태 적용한 javascript 코드를 모든 페이지에 적용 어떻게?<br>
+                적용하고나서 색깔 바꾸고 싶으면?<br>
+                color.js 파일로 분리 후 head에 script 속성 추가<br>
+                css와 마찬가지로 네트워크적 측면에서 안좋음 => 캐싱으로
+            </p>
+
+            <p>
+                라이브러리 & 프레임워크<br>
+                라이브러리 : 가져다가 쓰기 vs 프레임워크 : 내가 만들어 쓰기<br>
+                라이브러리 : jQuery => 다운로드 혹은 CDN 복사하여 head에 붙여넣기<br>
+                jQuery : 반복문을 단 한줄로 바꿔주는 유용한 라이브러리 => 검색하여 사용하기!<br>
             </p>
 
         </div>
