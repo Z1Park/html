@@ -4,15 +4,20 @@
     <title>WEB-css</title>
     <meta charset='UTF-8'>
     <link rel='stylesheet' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="color.js"></script>
 </head>
 
 <body>
     <h1><a href="index.html">WEB</a></h1>
+    <input id='toggle_btn' type='button' value="night" onclick="
+        day_night_toggle(this)
+    ">
 
     <div id='grid'>
         <ol id='navigation'>
             <li><a href='1.html.html' class='saw'>HTML</a></li>
-            <li><a href='2.css.html' class='saw' id='active'>CSS</a></li>
+            <li><a href='2.css.html' class='saw' id='active' style="color:blue;text-decoration: underline">CSS</a></li>
             <li><a href='3.javascript.html'>JavaScript</a></li>
         </ol>
 
